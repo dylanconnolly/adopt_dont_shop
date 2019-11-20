@@ -15,12 +15,18 @@ RSpec.describe "new shelter form", type: :feature do
 
     visit '/shelters/new'
 
-    expect(page).to have_field("authenticity_token")
+
+    fill_in "name", with: "Cats Are Devils"
+    fill_in "address", with: "123 Main St."
+    fill_in "city", with: "Seattle"
+    fill_in "state", with: "WA"
+    fill_in "zip", with: "12361"
+
+
     expect(page).to have_field("shelter[name]")
     expect(page).to have_field("shelter[address]")
     expect(page).to have_field("shelter[city]")
     expect(page).to have_field("shelter[state]")
     expect(page).to have_field("shelter[zip]")
-    expect(page).to have_field("submit")
   end
 end
