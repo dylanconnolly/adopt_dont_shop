@@ -1,8 +1,8 @@
 <h1><%= @shelter.name %></h1>
 
-<a href="/shelters/:id/edit" id="edit shelter">Edit Information</a>
-
 <p><%= @shelter.address %><p></br>
 <p><%= @shelter.city %><p></br>
 <p><%= @shelter.state %><p></br>
 <p><%= @shelter.zip %><p></br>
+
+<a href="/shelters/<%= @shelter.id %>/edit" id="edit shelter">Edit Information</a>
