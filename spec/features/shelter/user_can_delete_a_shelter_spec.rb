@@ -10,6 +10,12 @@ RSpec.describe "delete shelter", type: :feature do
 
     visit "/shelters/#{shelter_1.id}"
 
-    expect(page).to have_link("delete shelter")
+    expect(page).to have_button("delete shelter")
+
+    click_button("delete shelter")
+
+    expect(page).to have_current_path("/shelters")
+    expect(page).not_to have_content("Blue Blue Barky")
+
   end
 end
