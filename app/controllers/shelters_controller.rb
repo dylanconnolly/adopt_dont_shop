@@ -26,6 +26,7 @@ class SheltersController < ApplicationController
   end
 
   def edit
+    #do we only use instance variables if they need to be used in the view?
     @shelter = Shelter.find(params[:id])
   end
 
@@ -37,7 +38,15 @@ class SheltersController < ApplicationController
                     city: params[:shelter][:city],
                     state: params[:shelter][:state],
                     zip: params[:shelter][:zip])
+
     shelter.save
+
     redirect_to "/shelters/#{shelter.id}"
+  end
+
+  def destroy
+    Shelter.destroy(params[:id])
+
+    redirect_to '/shelters'
   end
 end
