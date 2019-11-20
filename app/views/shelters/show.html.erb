@@ -1,0 +1,13 @@
+<h1><%= @shelter.name %></h1>
+
+<p><%= @shelter.address %><p></br>
+<p><%= @shelter.city %><p></br>
+<p><%= @shelter.state %><p></br>
+<p><%= @shelter.zip %><p></br>
+
+<a href="/shelters/<%= @shelter.id %>/edit" id="edit shelter">Edit Information</a></br>
+<form action="/shelters/<%= @shelter.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete" id="delete shelter"/>
+</form>
