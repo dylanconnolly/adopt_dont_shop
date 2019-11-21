@@ -12,7 +12,6 @@ class SheltersController < ApplicationController
   end
 
   def create
-    require "pry"; binding.pry
     shelter = Shelter.create(shelter_params)
 
     redirect_to '/shelters'

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "specific shelter", type: :feature do
-  it "there is a button to edit shelter" do
+RSpec.describe "shelter show page", type: :feature do
+  it "has a button to edit shelter" do
     shelter_1 = Shelter.create(name: "Blue Blue Barky",
                                address: "123 This Way",
                                city: "Denver",
@@ -10,7 +10,7 @@ RSpec.describe "specific shelter", type: :feature do
 
     visit "/shelters/#{shelter_1.id}"
 
-    click_link("edit shelter")
+    click_link("Edit Shelter")
 
     expect(page).to have_current_path("/shelters/#{shelter_1.id}/edit")
   end
