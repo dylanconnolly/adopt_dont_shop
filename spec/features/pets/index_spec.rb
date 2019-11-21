@@ -8,7 +8,7 @@ RSpec.describe "pets index", type: :feature do
                                state: "CO",
                                zip: "90204")
 
-    shelter_2 = Shelter.create(name: "Puppy Pound",
+    shelter_2 = Shelter.create(name: "Rodeo Roundup Soundup Pupps",
                               address: "5608 N Eaton St.",
                               city: "Chicago",
                               state: "IL",
