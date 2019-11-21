@@ -33,7 +33,7 @@ RSpec.describe "specific shelter", type: :feature do
 
     click_button("shelter submit")
 
-    expect(page).to have_current_path("/shelters/#{shelter_1.id}")
+    expect(current_path).to eq("/shelters/#{shelter_1.id}")
     expect(page).to have_content("I changed this name")
   end
 end
