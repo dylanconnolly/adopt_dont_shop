@@ -27,11 +27,11 @@ RSpec.describe "specific shelter", type: :feature do
     fill_in "name", with: "I changed this name"
     fill_in "address", with: "1820 Fake Blvd"
 
-    expect(page).to have_field ("shelter[city]")
-    expect(page).to have_field ("shelter[state]")
-    expect(page).to have_field ("shelter[zip]")
+    expect(page).to have_field ("city")
+    expect(page).to have_field ("state")
+    expect(page).to have_field ("zip")
 
-    click_button("shelter submit")
+    click_button("Update Shelter")
 
     expect(current_path).to eq("/shelters/#{shelter_1.id}")
     expect(page).to have_content("I changed this name")

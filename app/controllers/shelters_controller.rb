@@ -19,18 +19,13 @@ class SheltersController < ApplicationController
   end
 
   def edit
-    #do we only use instance variables if they need to be used in the view?
     @shelter = Shelter.find(params[:id])
   end
 
   def update
     shelter = Shelter.find(params[:id])
 
-    shelter.update(name: params[:shelter][:name],
-                    address: params[:shelter][:address],
-                    city: params[:shelter][:city],
-                    state: params[:shelter][:state],
-                    zip: params[:shelter][:zip])
+    shelter.update(shelter_params)
 
     shelter.save
 
