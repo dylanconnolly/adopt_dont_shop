@@ -22,7 +22,7 @@ RSpec.describe "new shelter form", type: :feature do
     fill_in "state", with: "WA"
     fill_in "zip", with: "12361"
 
-    click_button("shelter submit")
+    click_button("Create Shelter")
 
     expect(page).to have_current_path("/shelters")
     expect(page).to have_content("Cats Are Devils")
