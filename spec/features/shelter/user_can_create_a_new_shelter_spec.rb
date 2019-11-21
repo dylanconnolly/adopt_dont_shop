@@ -22,13 +22,6 @@ RSpec.describe "new shelter form", type: :feature do
     fill_in "state", with: "WA"
     fill_in "zip", with: "12361"
 
-
-    expect(page).to have_field("shelter[name]")
-    expect(page).to have_field("shelter[address]")
-    expect(page).to have_field("shelter[city]")
-    expect(page).to have_field("shelter[state]")
-    expect(page).to have_field("shelter[zip]")
-
     click_button("shelter submit")
 
     expect(page).to have_current_path("/shelters")
