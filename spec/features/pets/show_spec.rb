@@ -19,7 +19,7 @@ RSpec.describe "show pets", type: :feature do
 
     visit "/pets/#{pet_1.id}"
 
-    expect(page).to have_content(pet_1.image)
+    find("img[src='some_path']")
     expect(page).to have_content(pet_1.name)
     expect(page).to have_content(pet_1.description)
     expect(page).to have_content(pet_1.approximate_age)
@@ -29,7 +29,7 @@ RSpec.describe "show pets", type: :feature do
 
     visit "/pets/#{pet_2.id}"
 
-    expect(page).to have_content(pet_2.image)
+    find("img[src='some_url']")
     expect(page).to have_content(pet_2.name)
     expect(page).to have_content(pet_2.description)
     expect(page).to have_content(pet_2.approximate_age)
