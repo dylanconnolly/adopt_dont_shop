@@ -1,5 +1,7 @@
 <h2> Available Pets </h2>
 
+<%= link_to "New Pet", "/shelters/#{@shelter.id}/pets/new"%>
+
 <% @pets.each do |pet| %>
   <% if pet.adoptable == true %>
   <h2><img src="<%= pet.image %>"></h2>

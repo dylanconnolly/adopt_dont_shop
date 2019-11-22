@@ -43,4 +43,11 @@ RSpec.describe "shelter pet index", type: :feature do
     expect(page).to_not have_content(@pet_3.sex)
   end
 
+  it "has a link to create a new pet" do
+    visit "/shelters/#{@shelter_1.id}/pets"
+
+    click_link("New Pet")
+
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
+  end
 end
