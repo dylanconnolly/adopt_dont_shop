@@ -37,6 +37,11 @@ class SheltersController < ApplicationController
     redirect_to '/shelters'
   end
 
+  def show_pets
+    @pets = Shelter.find(params[:id]).pets
+    require "pry"; binding.pry
+  end
+
   private
 
     def shelter_params
