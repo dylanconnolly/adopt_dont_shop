@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "show pets", type: :feature do
-  it "the page displays the pet's details" do
+RSpec.describe "show pets page", type: :feature do
+  it "displays the pet's details" do
     shelter_1 = Shelter.create(name: "Blue Blue Barky",
                                address: "123 This Way",
                                city: "Denver",
