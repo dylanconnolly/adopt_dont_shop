@@ -19,6 +19,16 @@ RSpec.describe "edit pet form" do
     fill_in :approximate_age, with: "1"
     fill_in :description, with: "Yung boy"
 
+  end
+
+  it "has a submit button that will redirect to the pet show page with the updated info" do
+
+    visit "/pets/#{@pet_1.id}/edit"
+
+    fill_in :name, with: "Ned"
+    fill_in :approximate_age, with: "1"
+    fill_in :description, with: "Yung boy"
+
     click_button("Update Details")
 
     expect(current_path).to eq("/pets/#{@pet_1.id}")
