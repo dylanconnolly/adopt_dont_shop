@@ -9,5 +9,6 @@ class PetsController < ApplicationController
   end
 
   def new
+    @shelter_id = params[:id]
   end
 end
