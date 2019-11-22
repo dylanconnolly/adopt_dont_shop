@@ -18,4 +18,14 @@ RSpec.describe "pet can be deleted" do
     click_link "Delete Pet"
   end
 
+  it "redirects to pets index page where pet can no longer be found" do
+
+    visit "/pets/#{@pet_1.id}"
+
+    click_link "Delete Pet"
+
+    expect(current_path).to eq("/pets")
+    expect(page).to_not have_content(@pet_1.name)
+    expect(page).to_not have_content(@pet_1.image)
+  end
 end
