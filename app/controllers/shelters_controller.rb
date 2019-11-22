@@ -43,6 +43,9 @@ class SheltersController < ApplicationController
     @pets = @shelter.pets
   end
 
+  def new_pet
+  end
+
   private
 
     def shelter_params
