@@ -28,8 +28,8 @@ RSpec.describe "shelter index page", type: :feature do
 
     visit "/shelters"
 
-    expect(page).to have_link("/shelters/#{@shelter_1.id}/edit")
-    expect(page).to have_link("/shelters/#{@shelter_2.id}/edit")
+    click_link("Edit", match: :first)
 
+    expect(current_path).to eq("/shelters/#{@shelter_1.id}/edit")
   end
 end
