@@ -39,7 +39,6 @@ class SheltersController < ApplicationController
 
   def show_pets
     @pets = Shelter.find(params[:id]).pets
-    require "pry"; binding.pry
   end
 
   private
