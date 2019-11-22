@@ -5,7 +5,7 @@ class CreatePets < ActiveRecord::Migration[5.1]
       t.string :image
       t.string :approximate_age
       t.string :description
-      t.boolean :adoptable
+      t.boolean :adoptable, :default => true
 
       t.timestamps
     end

@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20191121215022) do
     t.string "image"
     t.string "approximate_age"
     t.string "description"
-    t.boolean "adoptable"
+    t.boolean "adoptable", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "sex"
