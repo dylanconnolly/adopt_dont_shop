@@ -33,5 +33,8 @@ RSpec.describe "new pet view" do
     click_button "Add Pet"
 
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
+
+    expect(page).to have_content("Catalina")
+    find("img[src='https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313_1280.jpg']")
   end
 end
