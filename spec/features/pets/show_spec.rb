@@ -37,4 +37,20 @@ RSpec.describe "show pets", type: :feature do
     expect(page).to have_content(pet_2.adoptable)
     expect(page).to_not have_content(pet_1.name)
   end
+
+  it "has a button to edit the pet's info" do
+    shelter_1 = Shelter.create(name: "Blue Blue Barky",
+                               address: "123 This Way",
+                               city: "Denver",
+                               state: "CO",
+                               zip: "90204")
+
+    pet_1 = Pet.create(name: "Rufus", image: "https://cdn.pixabay.com/photo/2018/05/07/10/48/husky-3380548_1280.jpg", approximate_age: "4", sex: "male", shelter: shelter_1)
+
+    visit "/pets/#{pet_1.id}"
+
+    click_link("Edit Pet")
+
+    expect(current_path).to eq("/pets/#{pet_1.id}/edit")
+  end
 end
