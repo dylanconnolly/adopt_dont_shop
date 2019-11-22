@@ -1,8 +1,10 @@
 <h2> Available Pets </h2>
 
 <% @pets.each do |pet| %>
+  <% if pet.adoptable == true %>
   <h2><img src="<%= pet.image %>"></h2>
   <h3><%= pet.name %></h3><br>
   Approximate age: <%= pet.approximate_age %><br>
   Sex: <%= pet.sex %><br>
+  <% end %>
 <% end %>
