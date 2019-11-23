@@ -6,7 +6,8 @@
   Approximate age: <%= pet.approximate_age %><br>
   Sex: <%= pet.sex %><br>
   Shelter: <%= pet.shelter.name %>
-  <section id="edit <%= pet.id %>">
+  <section id="links <%= pet.id %>">
     <%= link_to "Edit Pet", "/pets/#{pet.id}/edit" %>
+    <%= link_to "Delete Pet", "/pets/#{pet.id}", method: :delete %>
   </section>
 <% end %>

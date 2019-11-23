@@ -39,17 +39,35 @@ RSpec.describe "pets index", type: :feature do
 
     visit '/pets'
 
-    within("section[id='edit #{@pet_1.id}']") do
+    within("section[id='links #{@pet_1.id}']") do
       click_link("Edit Pet")
       expect(current_path).to eq("/pets/#{@pet_1.id}/edit")
     end
 
     visit '/pets'
 
-    within("section[id='edit #{@pet_2.id}']") do
+    within("section[id='links #{@pet_2.id}']") do
       click_link("Edit Pet")
       expect(current_path).to eq("/pets/#{@pet_2.id}/edit")
     end
+  end
 
+  it "has a link to delete a pet next to each pet" do
+
+    visit '/pets'
+
+    within("section[id='links #{@pet_1.id}']") do
+      click_link("Delete Pet")
+      expect(current_path).to eq("/pets")
+    end
+
+    visit '/pets'
+
+    within("section[id='links #{@pet_2.id}']") do
+      click_link("Delete Pet")
+    end
+
+    expect(page).to_not have_content(@pet_1.name)
+    expect(page).to_not have_content(@pet_2.name)
   end
 end
