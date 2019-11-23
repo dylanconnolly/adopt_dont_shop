@@ -44,10 +44,21 @@ RSpec.describe "shelter pet index", type: :feature do
   end
 
   it "has a link to create a new pet" do
+
     visit "/shelters/#{@shelter_1.id}/pets"
 
     click_link("New Pet")
 
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
   end
+
+  it "has a link to edit next to each pet" do
+
+    visit "/shelters/#{@shelter_1.id}/pets"
+
+    click_link("Edit Pet", match: :first)
+
+    expect(current_path).to eq("/pets/#{@pet_1.id}/edit")
+  end
+
 end
