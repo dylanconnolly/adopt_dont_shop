@@ -31,4 +31,9 @@ RSpec.describe "pets index", type: :feature do
     expect(page).to have_content(pet_2.approximate_age)
     expect(page).to have_content(shelter_2.name)
   end
+
+  it "has a link to edit pet next to each pet on page" do
+    
+  end
+
 end
