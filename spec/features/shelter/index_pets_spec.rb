@@ -54,12 +54,12 @@ RSpec.describe "shelter pet index", type: :feature do
 
   it "has a link to edit next to each pet" do
     pet_4 = Pet.create(name: "Dillard", image: "https://cdn.pixabay.com/photo/2018/05/07/10/48/husky-3380548_1280.jpg", approximate_age: "4", sex: "male", shelter: @shelter_1)
-    
+
     visit "/shelters/#{@shelter_1.id}/pets"
 
     within("section[id='edit #{@pet_1.id}']") do
-    click_link("Edit Pet")
-    expect(current_path).to eq("/pets/#{@pet_1.id}/edit")
+      click_link("Edit Pet")
+      expect(current_path).to eq("/pets/#{@pet_1.id}/edit")
     end
 
     visit "/shelters/#{@shelter_1.id}/pets"
