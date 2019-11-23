@@ -41,9 +41,17 @@ RSpec.describe "shelter index page", type: :feature do
 
     visit "/shelters"
 
-    click_link("Delete", match: :first)
-
+    within("section[id='#{@shelter_1.id}']") do
+    click_link("Delete")
     expect(current_path).to eq("/shelters")
+    end
+
+    visit "/shelters"
+
+    within("section[id='#{@shelter_2.id}']") do
+    click_link("Delete")
+    end
     expect(page).to_not have_content(@shelter_1.name)
+    expect(page).to_not have_content(@shelter_2.name)
   end
 end
