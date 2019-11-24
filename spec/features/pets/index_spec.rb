@@ -78,4 +78,19 @@ RSpec.describe "pets index", type: :feature do
     click_link("#{@shelter_1.name}")
     expect(current_path).to eq("/shelters/#{@shelter_1.id}")
   end
+
+  it "the name of the pet links to that pet's show page" do
+
+    visit "/pets"
+
+    click_link("Rufus")
+
+    expect(current_path).to eq("/pets/#{@pet_1.id}")
+
+    visit "/pets"
+
+    click_link("Peter")
+
+    expect(current_path).to eq("/pets/#{@pet_2.id}")
+  end
 end
