@@ -53,22 +53,43 @@ RSpec.describe "shelter pet index", type: :feature do
   end
 
   it "has a link to edit next to each pet" do
+
     pet_4 = Pet.create(name: "Dillard", image: "https://cdn.pixabay.com/photo/2018/05/07/10/48/husky-3380548_1280.jpg", approximate_age: "4", sex: "male", shelter: @shelter_1)
 
     visit "/shelters/#{@shelter_1.id}/pets"
 
-    within("section[id='edit #{@pet_1.id}']") do
+    within("section[id='links #{@pet_1.id}']") do
       click_link("Edit Pet")
       expect(current_path).to eq("/pets/#{@pet_1.id}/edit")
     end
 
     visit "/shelters/#{@shelter_1.id}/pets"
 
-    within("section[id='edit #{pet_4.id}']") do
+    within("section[id='links #{pet_4.id}']") do
       click_link("Edit Pet")
       expect(current_path).to eq("/pets/#{pet_4.id}/edit")
     end
+  end
 
+  it "has a link to delete next to each pet" do
+
+    pet_4 = Pet.create(name: "Dillard", image: "https://cdn.pixabay.com/photo/2018/05/07/10/48/husky-3380548_1280.jpg", approximate_age: "4", sex: "male", shelter: @shelter_1)
+
+    visit "/shelters/#{@shelter_1.id}/pets"
+
+    within("section[id='links #{@pet_1.id}']") do
+      click_link("Delete Pet")
+      expect(current_path).to eq("/pets")
+    end
+
+    visit "/shelters/#{@shelter_1.id}/pets"
+
+    within("section[id='links #{pet_4.id}']") do
+      click_link("Delete Pet")
+    end
+
+    expect(page).to_not have_content(@pet_1.name)
+    expect(page).to_not have_content(pet_4.name)
   end
 
 end
