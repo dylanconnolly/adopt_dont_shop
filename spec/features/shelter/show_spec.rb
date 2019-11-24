@@ -39,12 +39,6 @@ RSpec.describe "individual shelter page", type: :feature do
                                state: "CO",
                                zip: "90204")
 
-    shelter_2 = Shelter.create(name: "Puppy Pound",
-                               address: "5608 N Eaton St.",
-                               city: "Chicago",
-                               state: "IL",
-                               zip: "80234")
-
     visit "/shelters/#{shelter_1.id}"
 
     click_link("View Pets")
