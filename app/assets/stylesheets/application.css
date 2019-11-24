@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0px;
+  background-color: #F5F5F5;
+}
+
+#nav-flex {
+  display: flex;
+  background-color: #333;
+  height: 3rem;
+  align-items: center;
+}
+
+.navbar-link a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 1rem;
+  font-size: 20px;
+  text-decoration: none
+}
+
+.navbar-link a:hover {
+  background-color: #ddd;
+  color: #333;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
