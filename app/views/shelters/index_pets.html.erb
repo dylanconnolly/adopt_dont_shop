@@ -5,8 +5,12 @@
 <% @pets.each do |pet| %>
   <% if pet.adoptable == true %>
   <h2><img src="<%= pet.image %>"></h2>
-  <h3><%= pet.name %></h3><br>
+  <h3><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h3><br>
   Approximate age: <%= pet.approximate_age %><br>
   Sex: <%= pet.sex %><br>
+  <section id="links <%= pet.id %>">
+    <%= link_to "Edit Pet", "/pets/#{pet.id}/edit" %>
+    <%= link_to "Delete Pet", "/pets/#{pet.id}", method: :delete %>
+  </section>
   <% end %>
 <% end %>
