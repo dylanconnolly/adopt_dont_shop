@@ -17,6 +17,7 @@
 body {
   margin: 0px;
   background-color: #F5F5F5;
+  font-family: Palatino;
 }
 
 #nav-flex {
@@ -42,4 +43,13 @@ body {
 
 a {
   text-decoration: none;
+  vertical-align: center;
+}
+
+.sub-header {
+  display: flex;
+}
+
+.sub-header a {
+  
 }

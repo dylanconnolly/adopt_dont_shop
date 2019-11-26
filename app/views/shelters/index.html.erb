@@ -1,6 +1,7 @@
-<h1>Shelters</h1>
-
-<%= link_to "New Shelter", "/shelters/new" %>
+<header class="sub-header">
+  <h1>Shelters</h1>
+  <%= link_to "New Shelter", "/shelters/new" %>
+</header>
 
 <% @shelters.each do |shelter| %>
   <h3><%= link_to "#{shelter.name}", "/shelters/#{shelter.id}" %></h3>
