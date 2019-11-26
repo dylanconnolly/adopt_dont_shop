@@ -4,7 +4,7 @@
   <%= link_to "Delete Pet", "/pets/#{@pet.id}", method: :delete %>
 </section>
 
-<h2><img src="<%= @pet.image %>"></h2>
+<img src="<%= @pet.image %>" height=50% width=50%>
 <h3>Name: <%= @pet.name %></h3>
 Description: <%= @pet.description %><br>
 Approximate age: <%= @pet.approximate_age %><br>
