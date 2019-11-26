@@ -1,6 +1,7 @@
+<header class="sub-header">
 <h2> Available Pets </h2>
-
 <%= link_to "New Pet", "/shelters/#{@shelter.id}/pets/new"%>
+</header>
 
 <% @pets.each do |pet| %>
   <% if pet.adoptable == true %>
