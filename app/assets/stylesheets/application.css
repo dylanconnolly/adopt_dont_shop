@@ -31,8 +31,10 @@ body {
   color: #f2f2f2;
   text-align: center;
   padding: 1rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
   font-size: 20px;
-  text-decoration: none
+  text-decoration: none;
 }
 
 .navbar-link a:hover {
@@ -60,4 +62,14 @@ a {
 
 .sub-header a:hover{
   background-color: #228B22;
+}
+
+.shelter{
+  display: flex;
+  align-items: center;
+}
+
+.shelter a {
+  height: 1rem;
+  padding: 1rem;
 }
