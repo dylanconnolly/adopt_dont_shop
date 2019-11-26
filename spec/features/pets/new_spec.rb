@@ -17,7 +17,7 @@ RSpec.describe "new pet view" do
     fill_in "name", with: "Catalina"
     fill_in "description", with: "lovely little pupper"
     fill_in "approximate_age", with: "6"
-    fill_in "sex", with: "female"
+    select "female", :from => :sex
   end
 
   it "it redirects to /shelters/:id/pets after user clicks submit" do
@@ -28,7 +28,7 @@ RSpec.describe "new pet view" do
     fill_in "name", with: "Catalina"
     fill_in "description", with: "lovely little pupper"
     fill_in "approximate_age", with: "6"
-    fill_in "sex", with: "female"
+    select "female", :from => :sex
 
     click_button "Add Pet"
 

@@ -10,6 +10,8 @@ class PetsController < ApplicationController
 
   def new
     @shelter_id = params[:id]
+
+    @list = ["male", "female"]
   end
 
   def create

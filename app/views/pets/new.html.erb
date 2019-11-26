@@ -10,7 +10,7 @@
   <%= label_tag :approximate_age %>
   <%= text_field_tag :approximate_age %>
   <%= label_tag :sex %>
-  <%= text_field_tag :sex %>
+  <%= select_tag :sex, raw("<option>male</option>, <option>female</option>") %>
 
   <%= submit_tag "Add Pet" %>
 <% end %>
