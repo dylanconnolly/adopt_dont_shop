@@ -16,8 +16,10 @@
 
 body {
   margin: 0px;
+  padding: 0px;
   background-color: #F5F5F5;
   font-family: Palatino;
+  width: 100%;
 }
 
 #nav-flex {
@@ -72,4 +74,15 @@ a {
 .shelter a {
   height: 1rem;
   padding: 1rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 100%;
+}
+.grid-item {
+  border: 1px solid red;
+  width: 33%;
+  align-items: center;
 }

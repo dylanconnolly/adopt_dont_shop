@@ -3,15 +3,19 @@
 <%= link_to "New Pet", "/shelters/#{@shelter.id}/pets/new"%>
 </header>
 
-<% @pets.each do |pet| %>
-  <% if pet.adoptable == true %>
-  <h2><img src="<%= pet.image %>"></h2>
-  <h3><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h3><br>
-  Approximate age: <%= pet.approximate_age %><br>
-  Sex: <%= pet.sex %><br>
-  <section id="links <%= pet.id %>">
-    <%= link_to "Edit Pet", "/pets/#{pet.id}/edit" %>
-    <%= link_to "Delete Pet", "/pets/#{pet.id}", method: :delete %>
-  </section>
+<div class="grid-container">
+  <% @pets.each do |pet| %>
+    <div class="grid-item">
+      <% if pet.adoptable == true %>
+      <img src="<%= pet.image %>" width=90%, height=90%>
+      <h3><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h3><br>
+      Approximate age: <%= pet.approximate_age %><br>
+      Sex: <%= pet.sex %><br>
+      <section id="links <%= pet.id %>">
+        <%= link_to "Edit Pet", "/pets/#{pet.id}/edit" %>
+        <%= link_to "Delete Pet", "/pets/#{pet.id}", method: :delete %>
+      </section>
+      <% end %>
+    </div>
   <% end %>
-<% end %>
+</div>
