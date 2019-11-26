@@ -7,9 +7,10 @@
   <% @pets.each do |pet| %>
     <div class="grid-item">
       <% if pet.adoptable == true %>
-      <img src="<%= pet.image %>" width=350px, height=350px object-fit: cover >
+      <img src="<%= pet.image %>" width=350px height=350px object-fit: cover >
       <h3><%= link_to "#{pet.name}", "/pets/#{pet.id}" %></h3>
       <p>
+        Description: <%= pet.description %><br>
         Approximate age: <%= pet.approximate_age %><br>
         Sex: <%= pet.sex %><br>
       </p>
