@@ -1,12 +1,11 @@
+<header class="sub-header">
 <h1><%= @shelter.name %></h1>
+<%= link_to "View Pets", "/shelters/#{@shelter.id}/pets"%>
+<%= link_to "Edit Shelter", "/shelters/#{@shelter.id}/edit" %>
+<%= link_to "Delete Shelter", "/shelters/#{@shelter.id}", method: :delete %>
+</header>
 
 <p><%= @shelter.address %><p></br>
 <p><%= @shelter.city %><p></br>
 <p><%= @shelter.state %><p></br>
 <p><%= @shelter.zip %><p></br>
-
-<%= link_to "View Pets", "/shelters/#{@shelter.id}/pets"%>
-
-<%= link_to "Edit Shelter", "/shelters/#{@shelter.id}/edit" %>
-
-<%= link_to "Delete Shelter", "/shelters/#{@shelter.id}", method: :delete %>
