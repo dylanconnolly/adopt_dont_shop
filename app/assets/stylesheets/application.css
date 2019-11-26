@@ -78,11 +78,15 @@ a {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 33% 33% 33%;
   width: 100%;
 }
 .grid-item {
-  border: 1px solid red;
-  width: 33%;
-  align-items: center;
+  width: 0.33;
+  text-align: center;
+  margin: 1rem;
+}
+
+.grid-item section a{
+  padding-right: 10px;
 }
