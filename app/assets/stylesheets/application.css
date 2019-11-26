@@ -44,12 +44,20 @@ body {
 a {
   text-decoration: none;
   vertical-align: center;
+  color: #333;
 }
 
 .sub-header {
   display: flex;
+  align-items: center;
 }
 
 .sub-header a {
-  
+  text-align: center;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+
+.sub-header a:hover{
+  background-color: #228B22;
 }
